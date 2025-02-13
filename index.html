@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSI project 4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/icone.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- La totalité de la page -->
+    <div class="container">
+        <!-- La bande en haut -->
+        <div id="top" class="bande_haut">
+            <div class="titre">Project 4 de NSI</div>
+            <div onclick="bg_color()" class="bouton_bg">
+                <img src="./images/soleil.png" alt="Thème">
+            </div>
+        </div>
+        <!-- Le sommaire -->
+        <h1 id="sommaire">Sommaire</h1>
+        <div class="sommaire">
+            <div class="somm1">
+                <p><a href="#I">I) Questions et réponses</a></p>
+            </div>
+            <div class="somm2">
+                <p><a href="#I_1">1) Qu'est de que l'heure UTC ?</a></p>
+            </div>
+            <div class="somm2">
+                <p><a href="#I_2">2) Qu'est ce qu'une trame NMEA et comment elle fonctionne ?</a></p>
+            </div>
+            <div class="somm1">
+                <p><a href="#II">II) Explications de mon code</a></p>
+            </div>
+        </div>
+        <br>
+        <!-- Les questions et les réponses -->
+        <h1 id="I">I) Questions et Réponses</h1>
+        <div class="questions">
+            <div id="I_1" class="question_rep">
+                <div class="question">
+                    1) Qu'est de que l'heure UTC ?
+                </div>
+                <div class="reponse">
+                    L'heure UTC (Universal Time Coordinated) est l'heure universelle, elle ne depend donc pas de l'heure dans le pays.<br>
+                    Cette heure est calaculée par plusieurs pays dans le monde notament en france à l'observaoire de Paris.
+                </div>
+            </div>
+            <div id="I_2" class="question_rep">
+                <div class="question">
+                    2) Qu'est ce qu'une trame NMEA et comment elle fonctionne ?
+                </div>
+                <div class="reponse">
+                    Une trame NMEA est une trame qui permet de transporter des informations sur la position GPS d'un object
+                </div>
+            </div>
+            <div id="I_3" class="question_rep">
+                <div class="question">
+                    3) Montrer deux images du globe terrestre indiquant le repérage par rapport à la latitude, puis par rapport à la
+                    longitude
+                </div>
+                <div class="reponse">
+                    <img src="./images/longitude-and-latitude-simple.png" alt="terres avec repérages">
+                </div>
+            </div>
+        </div>
+        <!-- La barre du bas -->
+        <div class="bande_bas">
+            <div class="maxime">
+                Maxime GEOFFROY
+            </div>
+        </div>
+    </div>
+    <script type="text/Javascript" src="./script.js"></script>
+</body>
+</html>
