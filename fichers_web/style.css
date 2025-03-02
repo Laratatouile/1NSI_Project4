@@ -5,13 +5,59 @@ body{
     padding-left: 5px;
 }
 
-.container{
-    font-size: medium;
+.conteneur{
+    margin-left: 75px;
+    text-align: center;
 }
 
 h1{
     text-decoration: underline;
+    margin-bottom: 15px;
 }
+/* navigation rapide */
+.bande_gauche{
+    margin-top: 4px;
+    z-index: 1;
+    margin-left: -5px;
+    rotate: 90;
+    position: fixed;
+    width: 65px;
+    height: 100%;
+    background-color: rgb(94, 94, 194);
+    border-right: solid 2px blue;
+}
+.bande_gauche:hover ~ .navigation_rapide{
+    margin-left: 0px;
+}
+.bande_gauche p{
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 50px;
+    color: blue;
+    margin-top: 250px;
+    margin-left: 0px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+.navigation_rapide{
+    z-index: 2;
+    transition: all 1s;
+    height: 100%;
+    width: 200px;
+    margin-top: 4px;
+    margin-left: -220px;
+    position: fixed;
+    background-color: rgb(53, 53, 112);
+}
+.navigation_rapide:hover{
+    margin-left: 0px;
+}
+
 
 /* bande du haut */
 .bande_haut{
@@ -67,6 +113,9 @@ h1{
     width: 100%;
     height: 5%;
 }
+.bande_bas .NMEA{
+    text-align: left;
+}
 .bande_bas .maxime{
     margin-left: 75%;
 }
@@ -80,6 +129,9 @@ h1{
     border-radius: 5px;
     background-color: cadetblue;
     margin-bottom: 5px ;
+}
+.questions{
+    margin-bottom: 30px;
 }
 .questions .question{
     font-size: larger ;
@@ -124,12 +176,21 @@ h1{
 }
 
 /* Explications de code */
+/* les tree de fichiers */
+.exp_fichier .exp_partie{
+    border-bottom: solid 2px blue;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+
+/* les fichiers */
 .exp_fichier{
     padding: 5px;
     border: solid 2px blue ;
     border-radius: 5px;
     background-color: cadetblue;
-    margin-bottom: 5px ;
+    margin-bottom: 50px ;
 }
 .exp_fichier .titre{
     text-decoration: underline;

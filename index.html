@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NSI project 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./fichers_web/prism.css">
     <link rel="stylesheet" href="./fichers_web/style.css">
     <link rel="shortcut icon" href="./images/icone.jpg" type="image/x-icon">
 </head>
 <body class="line-numbers">
+    <div class="bande_gauche">
+        <p>navigation rapide</p>
+    </div>
+    <div class="navigation_rapide">
+        <p>Sommaire</p>
+    </div>
     <!-- La totalité de la page -->
-    <div class="container">
+    <div class="conteneur">
         <!-- La bande en haut -->
         <div id="top" class="bande_haut">
             <div class="titre">Project 4 de NSI</div>
@@ -64,44 +71,420 @@
                     longitude.
                 </div>
                 <div class="reponse">
-                    <img src="./images/longitude-and-latitude-simple.png" alt="terres avec repérages">
+                    <img class="img-fluid" src="./images/longitude-and-latitude-simple.png" alt="terres avec repérages">
                     <p>Le méridien de Greenwitch et l'équateur sont les positions à 0° des objects en longitude et lattitude.</p>
                 </div>
             </div>
         </div>
+        <!-- les explications de code -->
         <h1 id="II">II) Les explications de mon code</h1>
         Mon code fonctionne en plusieurs fichiers qui ont chaqun une fonction bien précise.
+        <!-- en global -->
+        <h2>A) Les fichiers en global</h2>
         <div class="exp_fichier">
             <div class="titre">
-                1) Main.pyw
+                Les fichiers présent dans mon code
             </div>
-            Ce fichier est à la racine du repertoire. Il est le fichier de base à executer. pour generer la carte<br>
-            
-            <div class="exp_part">
-                <div class="titre">
-                    Le nom du fichier
+            <div class="exp_partie">
+                Regardons simplement les fichiers presents dans mon code.
+                <div class="arbre">
+                    <pre class="no-line-numbers">
+                        <code class="language-treeview">
+                            1NSI_Project4/
+                            |-- index.html
+                            |-- main.pyw
+                            |-- fichers_web/
+                            |   |-- fonctions_principales.js
+                            |   |-- prism.css
+                            |   |-- prism.js
+                            |   `-- style.css
+                            |-- fonctions_py/
+                            |   |-- affichage_console.py
+                            |   |-- carte.py
+                            |   `-- fonctions.py
+                            `-- images/
+                                |-- icone.jpg
+                                |-- longitude-and-latitude-simple.png
+                                `-- soleil.png
+                            
+                        </code>
+                    </pre>    
                 </div>
-                Main signifie que ce fichier est le fichier principal souvent celui a executer pour realiser la tache générale. Son extention pyw est la meme extention que py pour les fichiers python sauf qu'elle ne lance pas la console au premier plan et la laisse en arriere plan ce qui peut etre utile pour ne pas effrayer l'utilisateur avec plein de choses a l'écran et ne laisser que l'interface utilse.
+                Certains servent aux scripts pythons d'autres au site html les deux seuls fichiers à la racine du dossier.
             </div>
-            Ce fichier est le plus petit car il ne fait que lancer les différents fichiers avec les bonnes informations c'est en quelque sorte le chef du programme. <br>
-            Il commence avec l'importation des fonctions qui se situent dans le dossier fonctions_py qui trateront les informations et l'affichage de la carte.
+            <div class="exp_partie">
+                Concentrons nous sur les fichiers web uniquement. <br>
+                <div class="arbre">
+                    <pre class="no-line-numbers">
+                        <code class="language-treeview">
+                            1NSI_Project4/
+                            |-- index.html
+                            |-- fichers_web/
+                            |   |-- fonctions_principales.js
+                            |   |-- prism.css
+                            |   |-- prism.js
+                            |   `-- style.css
+                            `-- images/
+                                |-- icone.jpg
+                                |-- longitude-and-latitude-simple.png
+                                `-- soleil.png
+                            
+                        </code>
+                    </pre>    
+                </div>
+                Ces fichiers sont reparis en fonction de leur utilité. Les images sont avec les images dans le dossier "images", et les fichiers de stle en cascade (css) et ceux des animations (js) sont rangés ensembles dans le dossier "fichiers_web". <br>
+            </div>
+            <div class="exp_partie">
+                Maintenant prenons ceux utiles pour le script python.
+                <div class="arbre">
+                    <pre class="no-line-numbers">
+                        <code class="language-treeview">
+                            1NSI_Project4/
+                            |-- main.pyw
+                            `-- fonctions_py/
+                                |-- affichage_console.py
+                                |-- carte.py
+                                `-- fonctions.py
+                            
+                        </code>
+                    </pre>    
+                </div>
+                Le fichier principal se situe à la racine du disque et les autres se situent dans le dossier "fonctions_py".
+            </div>
+            Touts les fichiers sont utiles mais chaqun sert soit au site soit à python.
+        </div>
+        <!-- les fichiers plus preciséement -->
+        <h2>
+            B) Les fichiers un par un
+        </h2>
+        <!-- le fichier main.pyw -->
+        <div class="exp_fichier">
+            <div class="exp_partie">
+                <div class="titre">
+                    1) Main.pyw
+                </div>
+                Ce fichier est à la racine du repertoire. Il est le fichier de base à executer. pour generer la carte<br>
+                
+                <div class="exp_part">
+                    <div class="titre">
+                        Le nom du fichier
+                    </div>
+                    Main signifie que ce fichier est le fichier principal souvent celui a executer pour realiser la tache générale. Son extention pyw revient la meme extention que py pour les fichiers python sauf qu'elle ne lance pas la console au premier plan et la laisse en arriere plan ce qui peut etre utile pour ne pas effrayer l'utilisateur avec plein de choses a l'écran et ne laisser que l'interface utilsée.
+                </div>
+            </div>
+            <div class="exp_partie">
+                Ce fichier est le plus petit car il ne fait que lancer les différents fichiers avec les bonnes informations c'est en quelque sorte le chef du programme. <br>
+                Il commence avec l'importation des fonctions qui se situent dans le dossier fonctions_py qui trateront les informations et l'affichage de la carte.
+                <pre>
+                    <code class="language-python">
+                        import fonctions_py.fonctions as fct
+                        import fonctions_py.carte as carte
+                        import fonctions_py.affichage_console as aff_c
+                    </code>
+                </pre>
+            </div>
+            <div class="exp_partie">
+                Il y a une fonction brut_decimal qui transforme une donnée de localisation brute en format degrés décimaux.
+                <pre>
+                    <code class="language-python">
+                        def brut_decimal(donnee:float) -> float:
+                            """ transforme les données brutes de la trame en données utilisables en decimales"""
+                            return float(donnee[0:2]) + float(donnee[2:])/60
+                    </code>
+                </pre>
+            </div>
+            <div class="exp_partie">
+                La definition de la trame.
+                <pre>
+                    <code class="language-python">
+                        fct.logs("Main", "INFO", "Demarrage du programme")
+                        trame = "$GNGGA,192459.000,484.3011,N,00508.8970,E,1,20,0.68,323.9,M,47.7,M,,*7B"
+                        fct.logs("Main", "INFO", f"la trame a traiter est : \"{trame}\"")
+                    </code>
+                </pre>
+                La trame sous forme brute est definie dans la variable trame. <br>
+                Les fct.logs servent a afficher des textes dans la console elle provient de mon fichier d'outils fonctions.py qui me sert dans chaque project. Cette fonction me permet d'afficher qui fait quoi dans la console et donc me permet de savoir ou mon code plante si il y a un probleme beaucoup plus simplement. Nous les ignorerons poar la suite.
+            </div>
+            <div class="exp_partie">
+                Le lancement du premier script nommé affichage_console qui affiche dans la console et me renvoie les principales informations extraites de la trame.
+                <pre>
+                    <code class="language-python">
+                        fct.logs("Main", "INFO", "Lancement du script de traitement de la trame GGA")
+                        heure, latitude, longitude, precision_horizontale, altitude = aff_c.affiche_console(trame)
+                        fct.logs("Main", "INFO", "Le script de traitement de la trame GGA c'est termine")
+                    </code>
+                </pre>
+            </div>
+            <div class="exp_partie">
+                Le lancement du premier script nommé carte et qui va me créer la carte avec les informations données.
+                <pre>
+                    <code class="language-python">
+                        fct.logs("Main", "INFO", "Lancement du script de la creation de la carte avec les informations de la trame")
+                        latitude, longitude = brut_decimal(latitude), brut_decimal(longitude)
+                        carte.cree_carte([latitude, longitude], [[1, [latitude, longitude], "Ma chambre d'internat"], [2, [latitude, longitude], precision_horizontale]])
+                    </code>
+                </pre>
+                La carte prend en arguments des listes qui permettent l'affichage de différents elements sur la carte.
+            </div>
+            C'est déjà la fin du script car les autres scrpts ont fait tout le travail. <br>
+            Voici le code du script en entier.
             <pre>
-                <code class="language-py">
-import fonctions_py.fonctions as fct
-import fonctions_py.carte as carte
-import fonctions_py.affichage_console as aff_c
-                </code>
-            </pre>
-            Il y a une fonction longitude qui transforme une donnée de localisation brute en format degrés décimaux.
-            <pre>
-                <code class="language-py">
-def brut_decimal(donnee:float) -> float:
-    """ transforme les données brutes de la trame en données utilisables en decimales"""
-    return float(donnee[0:2]) + float(donnee[2:])/60
+                <code class="language-python">
+                    import fonctions_py.fonctions as fct
+                    import fonctions_py.carte as carte
+                    import fonctions_py.affichage_console as aff_c
+                    
+                    
+                    def brut_decimal(donnee:float) -> float:
+                        """ transforme les données brutes de la trame en données utilisables en decimales"""
+                        return float(donnee[0:2]) + float(donnee[2:])/60
+                    
+                    
+                    fct.logs("Main", "INFO", "Demarrage du programme")
+                    trame = "$GNGGA,192459.000,484.3011,N,00508.8970,E,1,20,0.68,323.9,M,47.7,M,,*7B"
+                    fct.logs("Main", "INFO", f"la trame a traiter est : \"{trame}\"")
+                    
+                    
+                    # affiche les informations dans la console
+                    fct.logs("Main", "INFO", "Lancement du script de traitement de la trame GGA")
+                    heure, latitude, longitude, precision_horizontale, altitude = aff_c.affiche_console(trame)
+                    fct.logs("Main", "INFO", "Le script de traitement de la trame GGA c'est termine")
+                    
+                    # cree la carte a afficher
+                    fct.logs("Main", "INFO", "Lancement du script de la creation de la carte avec les informations de la trame")
+                    latitude, longitude = brut_decimal(latitude), brut_decimal(longitude)
+                    carte.cree_carte([latitude, longitude], [[1, [latitude, longitude], "Ma chambre d'internat"], [2, [latitude, longitude], precision_horizontale]])
                 </code>
             </pre>
         </div>
-        <br><br><br><br><br>
+        <!-- le fichier afficage_console.py -->
+        <div class="exp_fichier">
+            <div class="exp_partie">
+                <div class="titre">
+                    2) affichage_console.py
+                </div>
+                Ce fichier importe d'abord le fichier qui sert a envoyer des informations dans la console. <br>
+                Il continue ensuite avec la fonction qui va traiter la trame GGA.
+                <pre>
+                    <code class="language-python">
+                        def affiche_console(trame:int) -> tuple:
+                            """ affiche simplement dans la console les informations relative a la trame GGA en entree """
+                            fct.logs("AFF_c", "INFO", "Debut de la recherche d'informations de la trame")
+                            trame = trame.split(",")
+                    </code>
+                </pre>
+                Il commence par definir la fonction qui prend en argment la trame et qui nous renverra un tuple d'informations. <br>
+                La ligne 2 explique le principe de la fonction. <br>
+                La ligne 4 decoupe la trame avec les virgules se qui separe les différents elements.
+            </div>
+            <div class="exp_partie">
+                <pre>
+                    <code class="language-python">
+                        heure = trame[1]
+                        latitude = trame[2]
+                        longitude = trame[4]
+                        precision_horizontale = trame[8]
+                        type_positionnement = trame[6]
+                        altitude = trame[9]
+                        nombre_satelites = trame[7]
+                    </code>
+                </pre>
+                Cette partie du code sert a mettre dans différents variables les différentes parties de la trame. <br>
+                Elle n'est pas vraiement utile mais sertt pour plus de compréhention.
+            </div>
+            <div class="exp_partie">
+                <pre>
+                    <code class="language-python">
+                        fct.logs("AFF_c", "INFO", "Fin de la recherche d'informations sur la trame")
+                        fct.logs("AFF_c", "INFO", "debut de l'affichage des données de la trame GGA dans la console")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", "Informations sur la trame GGA :")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", f"heure -> {heure[0:2]}h, {heure[2:4]}m, {heure[4:6]}s, {heure[7:10]}ms")
+                        fct.logs("AFF_c", "INFO", f"latitude -> {latitude[0:2]}° {latitude[2:4]}' {float('0.'+latitude[5:])*60}\" N")
+                        fct.logs("AFF_c", "INFO", f"longitude -> {longitude[1:3]}° {longitude[3:5]}' {float('0.'+longitude[6:])*60}\" E")
+                        fct.logs("AFF_c", "INFO", f"type de positionnement -> {'GPS' if type_positionnement == '1' else 'inconnu'}")
+                        fct.logs("AFF_c", "INFO", f"nombre de satelites -> {nombre_satelites}")
+                        fct.logs("AFF_c", "INFO", f"précision horizontale -> {precision_horizontale}m")
+                        fct.logs("AFF_c", "INFO", f"altitude -> {altitude}m")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", "Fin de l'affichage des données de la trame GGA")
+                    </code>
+                </pre>
+                La partie du code qui se sert de l'affichage de la console pour afficher les différentes parties de la trame decoupées et modifiées pour certaines.
+            </div>
+            <div class="exp_partie">
+                <pre>
+                    <code class="language-python">
+                        return heure, latitude, longitude, precision_horizontale, altitude
+                    </code>
+                </pre>
+                La ligne du return qui renvoie les différentes parties de la trame sous formes de différentes variables.
+            </div>
+            Voici le code du script en entier :
+            <pre>
+                <code class="language-python">
+                    import fonctions_py.fonctions as fct
+
+
+                    def affiche_console(trame:int) -> tuple:
+                        """ affiche simplement dans la console les informations relative a la trame GGA en entree """
+                        fct.logs("AFF_c", "INFO", "Debut de la recherche d'informations de la trame")
+                        trame = trame.split(",")
+
+                        heure = trame[1]
+                        latitude = trame[2]
+                        longitude = trame[4]
+                        precision_horizontale = trame[8]
+                        type_positionnement = trame[6]
+                        altitude = trame[9]
+                        nombre_satelites = trame[7]
+                        fct.logs("AFF_c", "INFO", "Fin de la recherche d'informations sur la trame")
+                        fct.logs("AFF_c", "INFO", "debut de l'affichage des données de la trame GGA dans la console")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", "Informations sur la trame GGA :")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", f"heure -> {heure[0:2]}h, {heure[2:4]}m, {heure[4:6]}s, {heure[7:10]}ms")
+                        fct.logs("AFF_c", "INFO", f"latitude -> {latitude[0:2]}° {latitude[2:4]}' {float('0.'+latitude[5:])*60}\" N")
+                        fct.logs("AFF_c", "INFO", f"longitude -> {longitude[1:3]}° {longitude[3:5]}' {float('0.'+longitude[6:])*60}\" E")
+                        fct.logs("AFF_c", "INFO", f"type de positionnement -> {'GPS' if type_positionnement == '1' else 'inconnu'}")
+                        fct.logs("AFF_c", "INFO", f"nombre de satelites -> {nombre_satelites}")
+                        fct.logs("AFF_c", "INFO", f"précision horizontale -> {precision_horizontale}m")
+                        fct.logs("AFF_c", "INFO", f"altitude -> {altitude}m")
+                        fct.logs("AFF_c", "INFO", "")
+                        fct.logs("AFF_c", "INFO", "Fin de l'affichage des données de la trame GGA")
+
+                        return heure, latitude, longitude[1:], precision_horizontale, altitude
+                </code>
+            </pre>
+        </div>
+        <div class="exp_fichier">
+            <div class="exp_partie">
+                <div class="titre">
+                    3) Le fichier carte.py
+                </div>
+                Ce fichier sert a generer la carte, par consequent il est plus difficile a expliquer et a comprendre car il utilise des boucles imbriquées.
+            </div>
+            <div class="exp_partie">
+                <pre>
+                    Importe folium pour generer la carte et fonctions pour l'affichage console
+                    <code class="language-python">
+                        import folium
+                        import fonctions_py.fonctions as fct
+                    </code>
+                </pre>
+            </div>
+            <div class="exp_partie">
+                La création de la fonction.
+                <pre>
+                    <code class="language-python">
+                        def cree_carte(localisation:list[float, float], dessins:list) -> None:
+                            """
+                            cree une carte avec la localisation et des objects:
+                            - La localisation est une liste avec la longitude et la latitude
+
+                            Pour les objects:
+                            - une liste des objects a placer
+
+                            Les objects en eux memes:
+                            - Le type de l'object
+                            - Une localisation sur la carte
+                            - Les parametres
+
+                            Les parametres:
+                            1 -> Un texte si l'object est un marqueur
+                            2 -> Un rayon float en metres pour les cercles
+                            """
+                    </code>
+                </pre>
+                Crée la fonction et decrit comment bien l'utiliser. <br>
+                Notament avec la partie dessins qui est très dure a comprendre.
+            </div>
+            <div class="exp_partie">
+                Le code qui genere la carte.
+                <pre>
+                    <code class="language-python">
+                        fct.logs("Carte", "INFO", "demarrage de la génération de la carte")
+                        try:
+                            fct.logs("Carte", "INFO", "Creation de la carte")
+                            carte = folium.Map(location=localisation, zoom_start=30)
+                            if dessins:
+                                for objects in dessins:
+                                    if objects[0] == 2:
+                                        fct.logs("Carte", "INFO", f"Ajout d'un marqueur texte aux coordonees {objects[1]}")
+                                        folium.Circle(objects[1], radius=objects[2], fill=True, color='red').add_to(carte)
+                                    elif objects[0] == 1:
+                                        fct.logs("Carte", "INFO", f"Ajout d'un marqueur cercle aux coordonees {objects[1]}")
+                                        folium.Marker(objects[1], popup=objects[2]).add_to(carte)
+                            fct.logs("Carte", "INFO", "Sauvegarde de la carte")
+                            carte.save("Ma_carte.html")
+                            fct.logs("Carte", "INFO", "La carte a ete sauvegardee arret du module")
+                        except Exception as e:
+                            fct.logs("Carte", "ERROR", f"La carte n'a pas pu être générée Erreur : {e}")
+
+                        return None
+                    </code>
+                </pre>
+                <div class="exp_part">
+                    <div class="titre">
+                        La methode try - except:
+                    </div>
+                    La methode try - except permet d'attraper les erreurs qui ne proviennent pas d'une faute de syntaxe python. Elle permet de ne pas faire crash le script si il y a une erreur. Elle est souvent utiliée dans les scripts complexes pour savoir d'où vient l'erreur. Le script lance la partie dans le try, si il y a une erreur la partie try s'arrete et le script lance la partie except. 
+                </div>
+                Le script commence par créer une carte avec une localisation au point de la trame a la ligne 3. <br>
+                Il cherche si il y a un dessin a afficher. Si il y en a un ou plusieurs il va les faire un par un (lignes 5-6). <br>
+                Il va ensuite cherche le type de dessin, 1 si c'est un Texte et 2 si c'est un Cercle. (lignes 7 et 10). <br>
+                Il ajoute le cercle ou le marqueur avec les options de taille et de texte. (lignes 9 et 12). <br>
+                Il la sauvegarde ensuite sous le nom "Ma_carte" avec l'extention html à la racine du dossier du script. <br>
+                L'utilisateur n'a plus qu'a lancer le fichier "Ma_carte.html" et  elle va s'ouvrir dans le navigateur.
+            </div>
+            Voici l'entiereté du code:
+            <pre>
+                <code class="language-python">
+                    import folium
+                    import fonctions_py.fonctions as fct
+
+
+                    def cree_carte(localisation:list[float, float], dessins:list) -> None:
+                        """
+                        cree une carte avec la localisation et des objects:
+                        - La localisation est une liste avec la longitude et la latitude
+
+                        Pour les objects:
+                        - une liste des objects a placer
+
+                        Les objects en eux memes:
+                        - Le type de l'object
+                        - Une localisation sur la carte
+                        - Les parametres
+
+                        Les parametres:
+                        1 -> Un texte si l'object est un marqueur
+                        2 -> Un rayon float en metres pour les cercles
+                        """
+                        fct.logs("Carte", "INFO", "demarrage de la génération de la carte")
+                        try:
+                            fct.logs("Carte", "INFO", "Creation de la carte")
+                            carte = folium.Map(location=localisation, zoom_start=30)
+                            if dessins:
+                                for objects in dessins:
+                                    if objects[0] == 2:
+                                        fct.logs("Carte", "INFO", f"Ajout d'un marqueur texte aux coordonees {objects[1]}")
+                                        folium.Circle(objects[1], radius=objects[2], fill=True, color='red').add_to(carte)
+                                    elif objects[0] == 1:
+                                        fct.logs("Carte", "INFO", f"Ajout d'un marqueur cercle aux coordonees {objects[1]}")
+                                        folium.Marker(objects[1], popup=objects[2]).add_to(carte)
+                            fct.logs("Carte", "INFO", "Sauvegarde de la carte")
+                            carte.save("Ma_carte.html")
+                            fct.logs("Carte", "INFO", "La carte a ete sauvegardee arret du module")
+                        except Exception as e:
+                            fct.logs("Carte", "ERROR", f"La carte n'a pas pu être générée Erreur : {e}")
+
+                        return None
+                </code>
+            </pre>
+        </div>
+        <br><br><br><br>
         <!-- La barre du bas -->
         <div class="bande_bas">
             <div class="NMEA">
@@ -112,6 +495,7 @@ def brut_decimal(donnee:float) -> float:
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/Javascript" src="./fichers_web/prism.js"></script>
     <script type="text/Javascript" src="./fichers_web/fonctions_principales.js"></script>
 </body>

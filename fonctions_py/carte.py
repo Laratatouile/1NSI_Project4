@@ -22,7 +22,7 @@ def cree_carte(localisation:list[float, float], dessins:list) -> None:
     fct.logs("Carte", "INFO", "demarrage de la génération de la carte")
     try:
         fct.logs("Carte", "INFO", "Creation de la carte")
-        carte = folium.Map(location=localisation)
+        carte = folium.Map(location=localisation, zoom_start=30)
         if dessins:
             for objects in dessins:
                 if objects[0] == 2:
