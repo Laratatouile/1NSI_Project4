@@ -1,5 +1,5 @@
 import folium
-import fonctions as fct
+import fonctions_py.fonctions as fct
 
 
 def cree_carte(localisation:list[float, float], dessins:list) -> None:
@@ -27,12 +27,12 @@ def cree_carte(localisation:list[float, float], dessins:list) -> None:
             for objects in dessins:
                 if objects[0] == 2:
                     fct.logs("Carte", "INFO", f"Ajout d'un marqueur texte aux coordonees {objects[1]}")
-                    folium.Circle(location=objects[1], radius=objects[2]).add_to(carte)
+                    folium.Circle(objects[1], radius=objects[2], fill=True, color='red').add_to(carte)
                 elif objects[0] == 1:
                     fct.logs("Carte", "INFO", f"Ajout d'un marqueur cercle aux coordonees {objects[1]}")
-                    folium.Marker(location=objects[1], popup=objects[2]).add_to(carte)
+                    folium.Marker(objects[1], popup=objects[2]).add_to(carte)
         fct.logs("Carte", "INFO", "Sauvegarde de la carte")
-        carte.save("Ma carte.html")
+        carte.save("Ma_carte.html")
         fct.logs("Carte", "INFO", "La carte a ete sauvegardee arret du module")
     except Exception as e:
         fct.logs("Carte", "ERROR", f"La carte n'a pas pu être générée Erreur : {e}")

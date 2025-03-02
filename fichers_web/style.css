@@ -122,3 +122,32 @@ h1{
     padding-bottom: 2px;
     padding-left: 30px;
 }
+
+/* Explications de code */
+.exp_fichier{
+    padding: 5px;
+    border: solid 2px blue ;
+    border-radius: 5px;
+    background-color: cadetblue;
+    margin-bottom: 5px ;
+}
+.exp_fichier .titre{
+    text-decoration: underline;
+    font-size: larger;
+    margin-bottom: 5px;
+    color: rgb(95, 62, 62);
+}
+
+.exp_part{
+    padding: 5px;
+    border: solid 2px rgb(176, 28, 206) ;
+    border-radius: 5px;
+    background-color: rgba(225, 0, 255, 0.404);
+    margin-bottom: 5px ;
+}
+.exp_part .titre{
+    text-decoration: underline;
+    font-size: larger;
+    margin-bottom: 5px;
+    color: rgb(41, 21, 28);
+}

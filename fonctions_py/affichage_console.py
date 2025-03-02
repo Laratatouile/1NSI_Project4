@@ -1,4 +1,4 @@
-import fonctions as fct
+import fonctions_py.fonctions as fct
 
 
 def affiche_console(trame:int) -> tuple:

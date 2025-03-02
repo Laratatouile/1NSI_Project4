@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NSI project 4</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fichers_web/prism.css">
+    <link rel="stylesheet" href="./fichers_web/style.css">
     <link rel="shortcut icon" href="./images/icone.jpg" type="image/x-icon">
 </head>
-<body>
+<body class="line-numbers">
     <!-- La totalité de la page -->
     <div class="container">
         <!-- La bande en haut -->
@@ -69,6 +70,37 @@
             </div>
         </div>
         <h1 id="II">II) Les explications de mon code</h1>
+        Mon code fonctionne en plusieurs fichiers qui ont chaqun une fonction bien précise.
+        <div class="exp_fichier">
+            <div class="titre">
+                1) Main.pyw
+            </div>
+            Ce fichier est à la racine du repertoire. Il est le fichier de base à executer. pour generer la carte<br>
+            
+            <div class="exp_part">
+                <div class="titre">
+                    Le nom du fichier
+                </div>
+                Main signifie que ce fichier est le fichier principal souvent celui a executer pour realiser la tache générale. Son extention pyw est la meme extention que py pour les fichiers python sauf qu'elle ne lance pas la console au premier plan et la laisse en arriere plan ce qui peut etre utile pour ne pas effrayer l'utilisateur avec plein de choses a l'écran et ne laisser que l'interface utilse.
+            </div>
+            Ce fichier est le plus petit car il ne fait que lancer les différents fichiers avec les bonnes informations c'est en quelque sorte le chef du programme. <br>
+            Il commence avec l'importation des fonctions qui se situent dans le dossier fonctions_py qui trateront les informations et l'affichage de la carte.
+            <pre>
+                <code class="language-py">
+import fonctions_py.fonctions as fct
+import fonctions_py.carte as carte
+import fonctions_py.affichage_console as aff_c
+                </code>
+            </pre>
+            Il y a une fonction longitude qui transforme une donnée de localisation brute en format degrés décimaux.
+            <pre>
+                <code class="language-py">
+def brut_decimal(donnee:float) -> float:
+    """ transforme les données brutes de la trame en données utilisables en decimales"""
+    return float(donnee[0:2]) + float(donnee[2:])/60
+                </code>
+            </pre>
+        </div>
         <br><br><br><br><br>
         <!-- La barre du bas -->
         <div class="bande_bas">
@@ -80,6 +112,7 @@
             </div>
         </div>
     </div>
-    <script type="text/Javascript" src="./fonctions_principales.js"></script>
+    <script type="text/Javascript" src="./fichers_web/prism.js"></script>
+    <script type="text/Javascript" src="./fichers_web/fonctions_principales.js"></script>
 </body>
 </html>
