@@ -28,4 +28,4 @@ def affiche_console(trame:int) -> tuple:
     fct.logs("AFF_c", "INFO", "")
     fct.logs("AFF_c", "INFO", "Fin de l'affichage des données de la trame GGA")
 
-    return heure, latitude, longitude, precision_horizontale, altitude
+    return heure, latitude, longitude[1:], precision_horizontale, altitude
