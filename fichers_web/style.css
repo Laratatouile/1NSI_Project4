@@ -1,8 +1,6 @@
 body{
     background-color: rgb(221, 221, 221);
     color: black;
-    padding-right: 5px;
-    padding-left: 5px;
 }
 
 .conteneur{
@@ -16,13 +14,13 @@ h1{
 }
 /* navigation rapide */
 .bande_gauche{
-    margin-top: 4px;
+    margin-top: 8px;
+    padding-bottom: 5px;
     z-index: 1;
-    margin-left: -5px;
     rotate: 90;
     position: fixed;
     width: 65px;
-    height: 100%;
+    height: 100vh;
     background-color: rgb(94, 94, 194);
     border-right: solid 2px blue;
 }
@@ -34,7 +32,7 @@ h1{
     text-align: center;
     font-size: 50px;
     color: blue;
-    margin-top: 250px;
+    margin-top: 170%;
     margin-left: 0px;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -47,9 +45,10 @@ h1{
 .navigation_rapide{
     z-index: 2;
     transition: all 1s;
-    height: 100%;
+    height: 100vh;
     width: 200px;
-    margin-top: 4px;
+    margin-top: 8px;
+    padding-left: 10px;
     margin-left: -220px;
     position: fixed;
     background-color: rgb(53, 53, 112);
@@ -57,19 +56,39 @@ h1{
 .navigation_rapide:hover{
     margin-left: 0px;
 }
+.navigation_rapide .somm0{
+    color: rgb(82, 82, 202);
+    font-size: 30px;
+    text-decoration: underline;
+}
 
+/* sommaire */
+.sommaire p{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.sommaire a{
+    color: black;
+}
+
+.somm1{
+    text-decoration: underline;
+}
+.somm2{
+    text-decoration: none;
+    color: none;
+}
 
 /* bande du haut */
 .bande_haut{
     margin-top: -8px;
-    padding-top: 5px;
-    margin-left: -13px;
-    padding-left: 16px;
-    padding-right: 10px;
+    padding-top: 8px;
+    margin-left: -20px;
+    padding-left: 100px;
     padding-bottom: 6px;
     background-color: rgb(172, 9, 166);
     color: rgb(0, 0, 0);
-    width: 100%;
+    width: 100vw;
     height: 5%;
     padding-bottom: 10px;
 }
@@ -83,7 +102,7 @@ h1{
     max-width: 40px;
     min-height: 20px;
     margin-left: 90%;
-    margin-top: -30px;
+    margin-top: -35px;
     padding-top: 17px;
     background-color: rgba(200, 200, 200, 0.3);
     border-radius: 10px;
@@ -94,8 +113,7 @@ h1{
     user-select: none;
 }
 .bande_haut .bouton_bg img{
-    margin-top: -18px;
-    margin-bottom: -5px;
+    margin-top: -20px;
     border: solid 0px;
     width: 40px;
 }
@@ -147,33 +165,6 @@ h1{
     padding: 0;
 }
 
-/* sommaire */
-.sommaire{
-    padding: 5px;
-    margin-top: -10px;
-    border: solid 2px blue ;
-    border-radius: 5px;
-    background-color: cadetblue;
-    margin-bottom: 5px ;
-}
-.sommaire p{
-    margin-bottom: 5px;
-}
-.sommaire a{
-    color: black;
-    text-decoration: none;
-}
-
-.somm1{
-    text-decoration: underline;
-    font-size: larger;
-    padding-left: 15px;
-    margin-top: -10px;
-}
-.somm2{
-    padding-bottom: 2px;
-    padding-left: 30px;
-}
 
 /* Explications de code */
 /* les tree de fichiers */
