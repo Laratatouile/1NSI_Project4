@@ -1,3 +1,4 @@
+// l'arriere plan
 function bg_color(){
     var color1 = "rgb(75, 75, 75)";
     var color2 = "rgb(221, 221, 221)";
@@ -8,7 +9,22 @@ function bg_color(){
     }
 }
 
+// ouvrir et fermer la partie 1
+function rap_ouv_I() {
+    let object = document.getElementsByClassName("somm1_2");
+    for (let i = 0; i < object.length; i++) {
+        let currentDisplay = window.getComputedStyle(object[i]).display;
+        if (currentDisplay === "none") {
+            object[i].style.display = "block";
+        } else {
+            object[i].style.display = "none";
+            console.log("eee");
+        }
+    }
+}
 
+
+// asombrir a la navigation rapide
 const box = document.getElementById("panneau_droite");
 
 box.addEventListener("mouseenter", () => {
