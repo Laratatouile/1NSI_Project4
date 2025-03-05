@@ -11,15 +11,24 @@ function bg_color(){
 
 // ouvrir et fermer la partie 1
 function rap_ouv_I() {
-    let object = document.getElementsByClassName("somm1_2");
-    for (let i = 0; i < object.length; i++) {
-        let currentDisplay = window.getComputedStyle(object[i]).display;
-        if (currentDisplay === "none") {
-            object[i].style.display = "block";
-        } else {
-            object[i].style.display = "none";
-            console.log("eee");
-        }
+    if (document.getElementById("somm1_1").style.display == "none") {
+        document.getElementById("somm1_1").style.display = "block";
+        document.getElementById("ouv_img_1").style.transform = 'rotate(0deg)';
+    } else {
+        document.getElementById("somm1_1").style.display = "none";
+        document.getElementById("ouv_img_1").style.transform = 'rotate(-90deg)';
+    }
+}
+
+// ouvrir et fermer la partie 2
+function rap_ouv_II() {
+    if (document.getElementById("somm2_1").style.display == "none") {
+        document.getElementById("somm2_1").style.display = "block";
+        document.getElementById("ouv_img_2").style.transform = 'rotate(0deg)';
+    } else {
+        console.log("eee")
+        document.getElementById("somm2_1").style.display = "none";
+        document.getElementById("ouv_img_2").style.transform = 'rotate(-90deg)';
     }
 }
 

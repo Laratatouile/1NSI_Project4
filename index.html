@@ -20,20 +20,25 @@
             <div class="somm1">
                 <p>
                     <a href="#I">I) Questions et réponses</a>
-                    <img src="./images/fleche.png" alt=">">
+                    <img id="ouv_img_1" onclick="rap_ouv_I()" src="./images/fleche.png" alt=">">
                 </p>
             </div>
-            <div class="somm1_2">
+            <div id="somm1_1" class="somm1_1">
                 <p><a href="#I_1">1) Qu'est de que l'heure UTC ?</a></p>
-            </div>
-            <div class="somm1_2">
                 <p><a href="#I_2">2) Qu'est ce qu'une trame NMEA et comment ça fonctionne ?</a></p>
-            </div>
-            <div class="somm1_2">
                 <p><a href="#I_3">3) Qu'est ce que la longitude et la latitude ?</a></p>
             </div>
             <div class="somm2">
-                <p><a href="#II">II) Explications de mon code</a></p>
+                <p>
+                    <a href="#II">II) Explications de mon code</a>
+                    <img id="ouv_img_2" onclick="rap_ouv_II()" src="./images/fleche.png" alt=">">
+                </p>
+            </div>
+            <div id="somm2_1" class="somm2_1">
+                <p><a href="#II_A">A) Les fichiers globaux</a></p>
+                <p><a href="#II_1">1) Le fichier main.pyw</a></p>
+                <p><a href="#II_2">2) Le fichier affichage_console.py</a></p>
+                <p><a href="#II_3">3) Le fichier carte.py</a></p>
             </div>
         </div>
     </div>
@@ -96,7 +101,7 @@
                 Mon code fonctionne en plusieurs fichiers qui ont chaqun une fonction bien précise.
             </p>
             <!-- en global -->
-            <h2>A) Les fichiers en global</h2>
+            <h2 id="II_A">A) Les fichiers en global</h2>
             <div class="exp_fichier">
                 <div class="titre">
                     Les fichiers présent dans mon code
@@ -174,7 +179,7 @@
                 B) Les fichiers un par un
             </h2>
             <!-- le fichier main.pyw -->
-            <div class="exp_fichier">
+            <div id="II_1" class="exp_fichier">
                 <div class="exp_partie">
                     <div class="titre">
                         1) Main.pyw
@@ -274,7 +279,7 @@
                 </pre>
             </div>
             <!-- le fichier afficage_console.py -->
-            <div class="exp_fichier">
+            <div id="II_2" class="exp_fichier">
                 <div class="exp_partie">
                     <div class="titre">
                         2) affichage_console.py
@@ -374,7 +379,8 @@
                     </code>
                 </pre>
             </div>
-            <div class="exp_fichier">
+            <!-- le fichier carte.py -->
+            <div id="II_3" class="exp_fichier">
                 <div class="exp_partie">
                     <div class="titre">
                         3) Le fichier carte.py
