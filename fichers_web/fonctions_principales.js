@@ -26,7 +26,6 @@ function rap_ouv_II() {
         document.getElementById("somm2_1").style.display = "block";
         document.getElementById("ouv_img_2").style.transform = 'rotate(0deg)';
     } else {
-        console.log("eee")
         document.getElementById("somm2_1").style.display = "none";
         document.getElementById("ouv_img_2").style.transform = 'rotate(-90deg)';
     }
